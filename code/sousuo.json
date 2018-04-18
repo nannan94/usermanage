@@ -1,0 +1,13 @@
+[{
+  "id": 11,
+  "text":"用户管理",
+  "children":[{
+    "text":"互联网金融事业部",
+    "state":"open",
+    "children":[{
+      "text":"社会渠道支付服务aaaaaaaaaaaaa",
+      "url": "user/cengji.html",
+      "title":"社会渠道支付服务aaaaaaaaaaaaa"
+    }]
+
+  }]

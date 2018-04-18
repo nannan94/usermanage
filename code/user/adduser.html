@@ -1,0 +1,105 @@
+<!--<link rel="stylesheet" href="../css/usermanagement.css">-->
+<div class="bodywrapper">
+    <div class="useradd">
+        <h1 class="title">用户组管理 — 新增用户组</h1>
+        <input type="text" placeholder="输入新增用户组名称" class="addinput">
+        <div class="quanxianfenpei">
+            <div class="title">
+                <span>权限分配</span>
+                <span id="congzhi">重置</span>
+            </div>
+            <div class="list">
+                <div class="easyui-panel">
+                    <ul id="ttlist" class="easyui-tree" data-options=""></ul>
+                </div>
+            </div>
+            <div class="button">
+                <button class="woui-btn woui-btn-orange woui-btn-small concel-button">
+                    取消
+                </button>
+                <button class="woui-btn woui-btn-blue woui-btn-small centain-button">
+                    确定
+                </button>
+            </div>
+        </div>
+<!--<div class="zhanwei"></div>-->
+    </div>
+</div>
+
+<script>
+    function sendMessage(){
+//            确定按钮
+        $('.centain-button').on('click',function(){
+            var rolename = $('.addinput').val();
+            var menuids = getChecked();
+            var data = {
+                roleName:rolename,
+                menuIds: menuids
+            }
+            if(rolename){
+                var type = "dialgadd";
+                var title = "用户组添加成功!";
+                var text = rolename +"用户组已添加成功，"+"成功添加" + rolename + "用户组的权限！";
+            }else{
+                var type = "dialgerror";
+                var title = "用户组为空!";
+                var text = null;
+            }
+            $.ajax({
+                "url":"",
+                "type":"Post",
+                "data": data,
+                success: function(){
+                    var dialog = new dialgModel();
+                    dialog.init({
+                        windows: ".bodywrapper",
+                        type: type,
+                        title: title,
+                        cont: text
+                    });
+                    center($('#dialg'));
+                },
+                error: function () {
+                    var dialog = new dialgModel();
+                    dialog.init({
+                        windows: ".bodywrapper",
+                        type: "dialgerror",
+                        title: "用户组添加失败!"
+                    });
+                    center($('#dialg'));
+                }
+            })
+        })
+            //取消按钮
+        $('.concel-button').on('click',function(){
+            $('#body').load('./user/adduser.html',function(){
+                sendMessage();
+            });
+        })
+     //重置
+        $('#congzhi').css('cursor','pointer');
+        $('#congzhi').on('click',function(){
+            $('#ttlist').tree({
+                url: 'tree_data3.json',
+                method: 'get',
+                animate: true,
+                checkbox:true
+            });
+        });
+        $('#ttlist').tree({
+            url: 'tree_data3.json',
+            method: 'get',
+            animate: true,
+            checkbox:true
+        });
+        function getChecked(){
+            var nodes = $('#ttlist').tree('getChecked');
+            var s = '';
+            for(var i=0; i<nodes.length; i++){
+                if (s != '') s += ',';
+                s += nodes[i].id;
+            }
+        }
+    }
+
+</script>

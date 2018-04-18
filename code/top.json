@@ -1,0 +1,80 @@
+[
+  {
+    "name":"首页",
+    "src":"shouye.html",
+    "search": true ,
+    "data":[]
+  },
+  {
+    "name":"用户权限管理",
+    "src":"user/sousuo.html",
+    "search": false,
+    "data":[{
+          "id": 11,
+          "text":"用户管理",
+          "children":[{
+          "text":"互联网金融事业部",
+            "state":"open",
+            "children":[{
+            "text":"社会渠道支付服务aaaaaaaaaaaaa",
+            "url": "user/cengji.html",
+              "title":"社会渠道支付服务aaaaaaaaaaaaa"
+          }]
+
+        }]
+      },{
+
+        "text":"用户组管理",
+        "children":[{
+          "text":"新增用户组",
+          "url": "user/adduser.html",
+          "id":"122"
+        },
+          {
+            "text":"查询用户组",
+            "url": "user/xyusercx.html"
+          }]
+      }]
+  },
+  {
+    "name":"指标查询",
+    "src":"user/adduser.html",
+    "data":[
+      {
+
+        "text":"用户管理",
+        "children":[{
+
+          "text":"短信日报"
+
+        }]
+      },{
+
+        "text":"用户组管理",
+        "children":[{
+
+          "text":"新增用户组"
+        },
+          {
+            "text":"查询用户组"
+          }]
+      }
+    ]
+  },
+  {
+    "name":"高管仪表盘",
+    "src":"",
+    "data":[
+      {
+
+        "text":"用户管理",
+        "children":[{
+
+          "text":"短信日报"
+
+        }]
+      }
+    ]
+  }
+
+]

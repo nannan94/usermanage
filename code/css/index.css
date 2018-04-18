@@ -1,0 +1,497 @@
+/*搜索*/
+.sousuo {
+  width: 100%;
+  text-align: center;
+}
+.sousuo .logo-sign {
+  width: 99%;
+  display: block;
+  padding-top: 110px;
+}
+.sousuo .woui-input-wrapper {
+  padding-top: 20px;
+  width: 400px;
+  height: 50px;
+  position: relative;
+}
+.sousuo .woui-input-wrapper input {
+  background: #FFFFFF;
+  border: 1px solid #4D88E6;
+  border-radius: 3px;
+  height: 40px;
+}
+.sousuo .woui-input-wrapper div {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  background: #4D88E6;
+  font-size: 16px;
+  color: #FFFFFF;
+  position: absolute;
+  top: 20px;
+  left: 320px;
+  border-radius: 0 3px 3px 0;
+}
+/*基本信息*/
+.personmession {
+  margin-top: 33px !important;
+}
+/*现有用户查询*/
+.userchaxun {
+  position: relative;
+  top: 10px;
+  margin-left: 220px;
+  width: -120%;
+  height: 100%;
+  padding-bottom: 25%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: #FFFFFF ;
+}
+.userchaxun h1 {
+  font-size: 14px;
+  color: #333333;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.userchaxun .tablewrapper,
+.userchaxun .tablewrapper-cengji {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 28px;
+  height: 560px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2px;
+  display: flex;
+  min-width: 700px;
+  flex-direction: column;
+}
+.userchaxun .tablewrapper .table-normal .tdone,
+.userchaxun .tablewrapper-cengji .table-normal .tdone {
+  width: 400px!important;
+}
+.userchaxun .tablewrapper .table-normal .tdthree,
+.userchaxun .tablewrapper-cengji .table-normal .tdthree {
+  width: 317px;
+}
+.userchaxun .tablewrapper .table-normal .tdtwo,
+.userchaxun .tablewrapper-cengji .table-normal .tdtwo,
+.userchaxun .tablewrapper .table-normal .two,
+.userchaxun .tablewrapper-cengji .table-normal .two,
+.userchaxun .tablewrapper .table-normal .three,
+.userchaxun .tablewrapper-cengji .table-normal .three {
+  width: 320px;
+}
+.userchaxun .tablewrapper .table-normal thead,
+.userchaxun .tablewrapper-cengji .table-normal thead {
+  width: 100%;
+}
+.userchaxun .tablewrapper .table-normal .secthead,
+.userchaxun .tablewrapper-cengji .table-normal .secthead {
+  width: 100%;
+  height: 518px;
+  overflow: auto;
+}
+.userchaxun th,
+.userchaxun td {
+  border-right: 1px solid #DEE5E7 ;
+  text-align: center;
+  height: 39px !important;
+  font-size: 12px;
+  color: #333333;
+}
+.userchaxun td {
+  height: 48px !important;
+  font-size: 12px;
+  color: #666666;
+}
+.userchaxun td.bianse {
+  color: #4D88E6!important;
+  cursor: pointer;
+}
+.userchaxun .table-normal td,
+.userchaxun .table-normal th {
+  padding-left: 0!important;
+}
+.tablewrapper-cengji td {
+  color: #666666!important;
+}
+/*增加和修改用户*/
+/*用户增加*/
+/*用户修改*/
+.useradd {
+  position: relative;
+  top: 10px;
+  margin-left: 220px!important;
+  width: -120%;
+  height: -41%;
+  background-color: #FFFFFF ;
+}
+.useradd h1 {
+  position: absolute;
+  font-size: 14px;
+  color: #333333;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-weight: normal;
+}
+.useradd .addinput {
+  margin-top: 64px;
+  margin-left: 120px;
+  width: 345px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #CFDADD;
+  color: #000000;
+  padding-left: 10px;
+}
+.useradd .quanxianfenpei {
+  margin-top: 23px;
+  margin-left: 120px;
+  width: 355px;
+  height: 550px;
+  border: 1px solid #DEE5E7;
+}
+.useradd .quanxianfenpei .title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f2f7ff;
+}
+.useradd .quanxianfenpei .title span {
+  display: inline-block;
+  font-size: 14px;
+  color: #333333;
+}
+.useradd .quanxianfenpei .title span:first-child {
+  float: left;
+  margin-left: 20px;
+}
+.useradd .quanxianfenpei .title span:last-child {
+  float: right;
+  margin-right: 20px;
+  color: #4D88E6;
+}
+.useradd .quanxianfenpei .list {
+  width: 355px;
+  height: 420px;
+  border-bottom: 1px solid #DEE5E7;
+  padding-top: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 14px;
+  color: #333333;
+}
+.useradd .quanxianfenpei .list .tree-file {
+  background: transparent;
+}
+.mask {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+.dialgadd,
+.dialg,
+.dialgerror,
+.dialgseccess,
+.dialgseccess2 {
+  width: 450px;
+  height: 183px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: fixed;
+  z-index: 101;
+}
+.dialgadd .close,
+.dialg .close,
+.dialgerror .close,
+.dialgseccess .close,
+.dialgseccess2 .close {
+  background-image: url(../images/Rectangle4@2x.png);
+  background-position: center;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.dialgadd .btnbox,
+.dialg .btnbox,
+.dialgerror .btnbox,
+.dialgseccess .btnbox,
+.dialgseccess2 .btnbox {
+  width: 50%;
+  margin-left: 25%;
+  height: 30px;
+  border-radius: 2px;
+  display: block;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+.dialgadd .tittle,
+.dialg .tittle,
+.dialgerror .tittle,
+.dialgseccess .tittle,
+.dialgseccess2 .tittle {
+  font-size: 16px;
+  color: #333333;
+  line-height: 16px;
+  margin-top: 23px;
+  width: 100%;
+  text-align: center;
+}
+.dialg .cotent {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #666666;
+  line-height: 26px;
+  margin-top: 28px;
+}
+.dialg .btnbox {
+  margin-top: 20px;
+}
+.dialg .confirm {
+  width: 91px;
+  border-radius: 2px;
+  background: #4D88E6;
+  float: right;
+}
+.dialg .concel {
+  width: 91px;
+  border-radius: 2px;
+  background: #FF8A5E;
+}
+.dialgseccess .tittle {
+  margin-top: 65px;
+  width: 48%;
+  height: 28px;
+  line-height: 28px;
+  margin-left: 29%;
+  background-image: url(../images/yesicon.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.dialgseccess .btnbox {
+  display: none!important;
+}
+.dialgseccess2 .tittle {
+  margin-top: 35px;
+  width: 48%;
+  height: 28px;
+  line-height: 28px;
+  margin-left: 29%;
+  background-image: url(../images/yesicon.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.dialgseccess2 .confirm {
+  margin-top: 25px;
+  width: 91px;
+  border-radius: 2px;
+  background: #4D88E6;
+  display: inline-block;
+}
+.dialgseccess2 .btnbox .concel {
+  display: none!important;
+}
+.dialgadd .tittle {
+  margin-top: 25px;
+  width: 48%;
+  height: 28px;
+  line-height: 28px;
+  margin-left: 29%;
+  background-image: url(../images/yesicon.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.dialgadd .cotent {
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+  font-size: 14px;
+  color: #666666;
+  line-height: 26px;
+  margin-top: 20px;
+}
+.dialgadd .confirm {
+  width: 91px;
+  border-radius: 2px;
+  background: #4D88E6;
+  display: inline-block;
+}
+.dialgadd .btnbox .concel {
+  display: none!important;
+}
+.dialgerror .tittle {
+  margin-top: 45px;
+  background: none;
+}
+.dialgerror .confirm {
+  width: 91px;
+  border-radius: 2px;
+  background: #4D88E6;
+  display: inline-block;
+}
+.dialgerror .btnbox {
+  margin-top: 40px;
+}
+.dialgerror .btnbox .concel {
+  display: none!important;
+}
+* {
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container {
+  padding: 0 30px;
+  margin: 0 auto;
+  max-width: 1340px;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.button {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  width: 100%;
+}
+.button button {
+  width: 80px;
+  margin-left: 20px;
+  border-radius: 2px;
+}
+.button button:first-child {
+  margin-right: 20px;
+}
+/*body*/
+.bodywrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  background-color: #f7f7f7;
+  position: relative;
+}
+/*侧边栏和tree*/
+#siderconte {
+  margin-top: 2px;
+  width: 210px;
+  float: left;
+  position: absolute;
+  height: 84%;
+}
+.side-wrapper {
+  position: relative;
+  padding-left: 20px;
+  z-index: 2;
+  font-size: 16px;
+  background-color: #fff;
+  height: 100%;
+  color: #475054;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+.side-wrapper .mulu {
+  font-size: 15px;
+  color: #333333;
+  letter-spacing: 0;
+  float: left;
+  padding-left: 7px;
+  padding-top: 17px;
+}
+.side-wrapper .search {
+  width: 170px;
+  height: 22px;
+  float: left;
+  background-color: #FFFFFF;
+  border: 1px solid #CFDADD;
+  border-radius: 3px;
+}
+.side-wrapper .search input {
+  color: #000000;
+  outline: none;
+  background: #ffffff;
+  -webkit-appearance: none;
+  -webkit-rtl-ordering: none;
+}
+.side-wrapper .search .search-button {
+  position: absolute;
+  margin-top: -19px;
+  margin-left: 147.5px;
+  width: 23px;
+  height: 23px;
+  border-radius: 0 3px 3px 0;
+  background: #539BED;
+  background-image: url(../images/111@2x.png);
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: center;
+}
+.side-wrapper .search:hover {
+  background: #FFFFFF;
+  border: 1px solid #4D88E6;
+}
+.side-wrapper .menutree {
+  position: absolute;
+  margin-top: 40%;
+  margin-left: -20px;
+}
+#yonghuguanli .search {
+  display: none;
+}
+#yonghuguanli .menutree {
+  position: absolute;
+  margin-top: 20%;
+  margin-left: -20px;
+}
+.menutree .easyui-panel > ul > li > div .tree-expanded {
+  background: url("../images/Path2.png") no-repeat 180px center !important;
+}
+.menutree .easyui-panel > ul > li > div .tree-collapsed {
+  background: url("../images/Path.png") no-repeat 180px center !important;
+}
+.menutree .easyui-panel > ul > li > div .tree-title {
+  font-size: 16px;
+  color: #333333;
+}
+.menutree .easyui-panel > ul > li > div .tree-hit {
+  left: -10px;
+}
+.list .easyui-panel > ul > li > div .tree-checkbox {
+  margin-left: 271px;
+}
+.list .easyui-panel > ul > li > ul > li div .tree-checkbox {
+  margin-left: 255px;
+}
+.list .easyui-panel > ul > li > ul > li > ul > li div .tree-checkbox {
+  margin-left: 205px;
+}

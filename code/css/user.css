@@ -1,0 +1,189 @@
+/*搜索*/
+.sousuo {
+  width: 100%;
+  text-align: center;
+}
+.sousuo .logo-sign {
+  width: 99%;
+  display: block;
+  padding-top: 110px;
+}
+.sousuo .woui-input-wrapper {
+  padding-top: 20px;
+  width: 400px;
+  height: 50px;
+  position: relative;
+}
+.sousuo .woui-input-wrapper input {
+  background: #FFFFFF;
+  border: 1px solid #4D88E6;
+  border-radius: 3px;
+  height: 40px;
+}
+.sousuo .woui-input-wrapper div {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  background: #4D88E6;
+  font-size: 16px;
+  color: #FFFFFF;
+  position: absolute;
+  top: 20px;
+  left: 320px;
+  border-radius: 0 3px 3px 0;
+}
+/*基本信息*/
+.personmession {
+  margin-top: 33px !important;
+}
+/*现有用户查询*/
+.userchaxun {
+  position: relative;
+  top: 10px;
+  margin-left: 220px;
+  width: -120%;
+  height: 100%;
+  padding-bottom: 25%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: #FFFFFF ;
+}
+.userchaxun h1 {
+  font-size: 14px;
+  color: #333333;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.userchaxun .tablewrapper,
+.userchaxun .tablewrapper-cengji {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 28px;
+  height: 560px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2px;
+  display: flex;
+  min-width: 700px;
+  flex-direction: column;
+}
+.userchaxun .tablewrapper .table-normal .tdone,
+.userchaxun .tablewrapper-cengji .table-normal .tdone {
+  width: 400px!important;
+}
+.userchaxun .tablewrapper .table-normal .tdthree,
+.userchaxun .tablewrapper-cengji .table-normal .tdthree {
+  width: 317px;
+}
+.userchaxun .tablewrapper .table-normal .tdtwo,
+.userchaxun .tablewrapper-cengji .table-normal .tdtwo,
+.userchaxun .tablewrapper .table-normal .two,
+.userchaxun .tablewrapper-cengji .table-normal .two,
+.userchaxun .tablewrapper .table-normal .three,
+.userchaxun .tablewrapper-cengji .table-normal .three {
+  width: 320px;
+}
+.userchaxun .tablewrapper .table-normal thead,
+.userchaxun .tablewrapper-cengji .table-normal thead {
+  width: 100%;
+}
+.userchaxun .tablewrapper .table-normal .secthead,
+.userchaxun .tablewrapper-cengji .table-normal .secthead {
+  width: 100%;
+  height: 518px;
+  overflow: auto;
+}
+.userchaxun th,
+.userchaxun td {
+  border-right: 1px solid #DEE5E7 ;
+  text-align: center;
+  height: 39px !important;
+  font-size: 12px;
+  color: #333333;
+}
+.userchaxun td {
+  height: 48px !important;
+  font-size: 12px;
+  color: #666666;
+}
+.userchaxun td.bianse {
+  color: #4D88E6!important;
+  cursor: pointer;
+}
+.userchaxun .table-normal td,
+.userchaxun .table-normal th {
+  padding-left: 0!important;
+}
+.tablewrapper-cengji td {
+  color: #666666!important;
+}
+/*增加和修改用户*/
+/*用户增加*/
+/*用户修改*/
+.useradd {
+  position: relative;
+  top: 10px;
+  margin-left: 220px!important;
+  width: -120%;
+  height: -41%;
+  background-color: #FFFFFF ;
+}
+.useradd h1 {
+  position: absolute;
+  font-size: 14px;
+  color: #333333;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-weight: normal;
+}
+.useradd .addinput {
+  margin-top: 64px;
+  margin-left: 120px;
+  width: 345px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #CFDADD;
+  color: #000000;
+  padding-left: 10px;
+}
+.useradd .quanxianfenpei {
+  margin-top: 23px;
+  margin-left: 120px;
+  width: 355px;
+  height: 550px;
+  border: 1px solid #DEE5E7;
+}
+.useradd .quanxianfenpei .title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f2f7ff;
+}
+.useradd .quanxianfenpei .title span {
+  display: inline-block;
+  font-size: 14px;
+  color: #333333;
+}
+.useradd .quanxianfenpei .title span:first-child {
+  float: left;
+  margin-left: 20px;
+}
+.useradd .quanxianfenpei .title span:last-child {
+  float: right;
+  margin-right: 20px;
+  color: #4D88E6;
+}
+.useradd .quanxianfenpei .list {
+  width: 355px;
+  height: 420px;
+  border-bottom: 1px solid #DEE5E7;
+  padding-top: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 14px;
+  color: #333333;
+}
+.useradd .quanxianfenpei .list .tree-file {
+  background: transparent;
+}

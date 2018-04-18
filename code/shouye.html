@@ -1,0 +1,86 @@
+<div class="homecontan">
+    <div class="homebox">
+        <div class="newsbox">
+            <p class="top">
+                <img class="pic1" src="./images/gonggao@2x.png" />
+                公告
+            </p>
+            <div class="newslibox">
+                <ul class="newsli" id="gonggao">
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="newsbox senewsbox">
+            <p class="top">
+                <img class="pic1" src="./images/daiban@2x.png" />
+                待办事项
+            </p>
+            <div class="newslibox">
+            <ul class="newsli" id="daiban">
+
+            </ul>
+            </div>
+        </div>
+        <div class="newsbox senewsbox last">
+            <p class="top">
+                <img class="pic1" src="./images/yujing@2x.png" />
+                预警管理
+            </p>
+            <div class="newslibox">
+            <ul class="newsli" id="yujing">
+
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="css/shouye.css" />
+<script>
+    $.ajax({
+        type:"GET",
+        url:"news.json",
+        dataType: "json",
+        success:function(data){
+            var html1='';
+            var html2='';
+            var html3='';
+            for(var i=0;i<data.data1.length;i++){
+                html1+=' <li><span></span><a href='+data.data1[i].src+'>'+data.data1[i].title+'</a></li>';
+                $('#gonggao').html(html1);
+            }
+            for(var i=0;i<data.data2.length;i++){
+                html2+=' <li><span></span><a href='+data.data2[i].src+'>'+data.data2[i].title+'</a></li>';
+                $('#daiban').html(html2);
+            }
+            for(var i=0;i<data.data2.length;i++){
+                html3+=' <li><span></span><a href='+data.data3[i].src+'>'+data.data3[i].title+'</a></li>';
+                $('#yujing').html(html3);
+            }
+            newsScroll('#gonggao');
+        },
+        error:function (data) {
+            console.log(data)
+        }
+    })
+
+    function moveTo(obj){
+        $(obj).animate({
+            top:'-40px'
+        },1000,function(){
+            $(this).css({top:'0px'}).find("li:first").appendTo(this);
+        })
+    }
+    function newsScroll(obj) {
+        var timer;
+        var obj=obj;
+        $(obj).hover(function(){
+            clearInterval(timer);
+        }, function(){
+            timer = setInterval(function(){
+                moveTo(obj)
+            }, 3000);
+        }).trigger('mouseleave');
+    }
+</script>

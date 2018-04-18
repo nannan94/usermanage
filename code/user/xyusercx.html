@@ -1,0 +1,102 @@
+<div class="bodywrapper">
+    <div class="userchaxun">
+        <h1>用户组管理 — 现有用户组查询</h1>
+        <div class="tablewrapper">
+            <!--<div class="sti-tbl-header" style="padding-right:px;">-->
+            <!--<table class="table-normal" style="margin-bottom: 0px;border-bottom-style: none;">-->
+         <!---->
+            <!--</table>-->
+            <!--</div>-->
+            <div class="sti-tbl-body">
+            <table class="table-normal" id="table2" >
+                <thead>
+                <tr>
+                    <!--一级标题-->
+                    <th class="tdone">用户组名称</th>
+                    <th class="tdtwo"></th>
+                    <th class="tdthree"></th>
+                    <!--<th></th>-->
+                </tr>
+                </thead>
+                    <tbody class="secthead">
+
+                    </tbody>
+
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    function sendMessage(id) {
+        var changedata="";
+//      获取数据
+        $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                url: './xiugai.json',
+                success: function (data) {
+                    changedata = data.xiugai;
+                    var len = changedata.length,
+                        str = "";
+
+                    for (var i = 0; i < len; i++) {
+                        str += "<tr>" +
+                            "<td style='height:48px;'>" + changedata[i].name + "</td>" +
+                            "<td class='bianse change' style='height:48px;'>" + changedata[i].xiugai + "</td>" +
+                            "<td class='bianse delete' style='height:48px;'>" + changedata[i].delete + "</td>" +
+                            "</tr>";
+                    }
+                    $('#table2 tbody').append(str);
+
+                },
+                error:function(data){
+//                    console.log(data)
+                }
+        })
+            //修改跳转
+            $(document).unbind().on("click", '#table2 tbody .change',function () {
+                var ind = $(this).parent().index();
+                $.ajax({cache: false});
+                $('#body').load(changedata[ind].src,function(){
+
+                    sendMessage(1);
+                });
+            });
+
+
+        //点击删除，删除id
+        $(document).on("click", '#table2 tbody .delete',function () {
+            var ind = $(this).parent().index();
+            var name = changedata[ind].name;
+            var text =  "确定要删除"+name+"用户组？"
+            var dialog = new dialgModel();
+            dialog.init({
+                windows: ".bodywrapper",
+                type: "dialg",
+                showtype: "fail",
+                dialgtype: "opt",
+                title: "用户组删除",
+                cont:text
+
+            });
+            center($('#dialg'));
+            $(document).on("click", '#dialg .confirm',function () {
+            $.ajax({
+                data:changedata[ind].id,
+                type: 'post',
+                url: '',
+                success: function (data) {
+                    var dialog = new dialgModel();
+                    dialog.init({
+                        windows: ".bodywrapper",
+                        type: "dialgseccess",
+                        title: "删除成功!"
+                    });
+                    center($('#dialg'));
+                }
+            })
+           })
+        });
+    }
+</script>

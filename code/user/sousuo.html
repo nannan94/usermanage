@@ -1,0 +1,33 @@
+<div class="bodywrapper">
+    <div class="useradd userchaxun">
+        <div class="sousuo">
+            <a class="logo-sign">
+                <img src="images/logo-7-1.png" alt="">
+            </a>
+            <div class="woui-input-wrapper">
+                <input type="text" placeholder="请输入姓名" class="woui-input woui-input-icon-right content">
+                <div id="ssearch">搜&nbsp;索</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    $('#ssearch').on('click',function(){
+        var rolename = $('.content').val();
+//        console.log(rolename)
+        $.ajax({
+            "url":"",
+            "type":"Post",
+            "data": rolename,
+            success: function(){
+                $('#body').load('./user/cengji.html',function(){
+                    sendMessage();
+                });
+            },
+            error: function () {
+                $('#body').load('./user/sousuo.html');
+            }
+        })
+    })
+</script>

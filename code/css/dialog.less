@@ -1,0 +1,173 @@
+.mask{
+  margin:0;padding:0;left:0;right:0;
+  top:0;
+  bottom:0;
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+.dialgadd,.dialg,.dialgerror,.dialgseccess,.dialgseccess2{
+  width: 450px;
+  height:183px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.20);
+  border-radius: 4px;
+  position: fixed;
+  z-index: 101;
+  .close{
+    background-image: url(../images/Rectangle4@2x.png);
+    background-position: center;
+    width:34px;
+    height:34px;
+    position: absolute;
+    top:0;
+    right:0;
+  }
+  .btnbox{
+    width:50%;
+    margin-left:25%;
+    height:30px;
+    border-radius: 2px;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    //margin-top: 30px;
+    color: #FFFFFF;
+  }
+  .tittle{
+    font-size: 16px;
+    color: #333333;
+    line-height: 16px;
+    margin-top:23px;
+    width:100%;
+    text-align: center;
+  }
+}
+.dialg{
+
+  .cotent{
+    width:100%;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+    line-height: 26px;
+    margin-top:28px;
+  }
+  .btnbox{
+    margin-top:20px;
+  }
+  .confirm{
+    width: 91px;
+    border-radius: 2px;
+    background: #4D88E6;
+    float: right;
+  }
+  .concel{
+    width: 91px;
+    border-radius: 2px;
+    background: #FF8A5E;
+  }
+
+}
+.dialgseccess{
+  .tittle{
+    margin-top:65px;
+    width: 48%;
+    height: 28px;
+    line-height: 28px;
+    margin-left: 29%;
+    //text-align: center;
+    background-image: url(../images/yesicon.png) ;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  .btnbox{
+
+      display: none!important;
+
+  }
+}
+.dialgseccess2{
+  .tittle{
+    margin-top:35px;
+    width: 48%;
+    height: 28px;
+    line-height: 28px;
+    margin-left: 29%;
+    //text-align: center;
+    background-image: url(../images/yesicon.png) ;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  .confirm{
+    margin-top:25px;
+    width: 91px;
+    border-radius: 2px;
+    background: #4D88E6;
+    display: inline-block;
+  }
+  .btnbox{
+    .concel{
+      display: none!important;
+    }
+
+  }
+}
+.dialgadd{
+  .tittle{
+    margin-top:25px;
+    width: 48%;
+    height: 28px;
+    line-height: 28px;
+    margin-left: 29%;
+    //text-align: center;
+    background-image: url(../images/yesicon.png) ;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  .cotent{
+    width:80%;
+    margin-left:10%;
+    text-align:center;
+    font-size: 14px;
+    color: #666666;
+    line-height: 26px;
+    margin-top:20px;
+  }
+
+  .confirm{
+    width: 91px;
+    border-radius: 2px;
+    background: #4D88E6;
+    display: inline-block;
+  }
+  .btnbox{
+    .concel{
+      display: none!important;
+    }
+  }
+
+
+}
+.dialgerror{
+  .tittle{
+    margin-top:45px;
+    background: none;
+  }
+  .confirm{
+    width: 91px;
+    border-radius: 2px;
+    background: #4D88E6;
+    display: inline-block;
+  }
+  .btnbox{
+    margin-top: 40px;
+    .concel{
+      display: none!important;
+    }
+  }
+}
+

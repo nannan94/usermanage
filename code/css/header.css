@@ -1,0 +1,88 @@
+#header {
+  width: 100%;
+}
+#header .wrapper {
+  width: 100%;
+  background-color: #fff;
+}
+#header .wrapper .headertop {
+  max-height: 60px;
+  line-height: 60px;
+  background-color: #4D88E6;
+}
+#header .wrapper .headertop .logo {
+  margin: 0;
+  float: left;
+  font-size: 32px;
+  font-weight: 400;
+}
+#header .wrapper .headertop .logo a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+#header .wrapper .headertop .logo a img {
+  height: 35px;
+  padding-left: 18%;
+  vertical-align: sub;
+}
+#header .wrapper .headertop .title {
+  clear: both;
+  color: #fff;
+  font-size: 20px;
+  margin-left: 65px;
+  font-weight: 500;
+}
+#header .wrapper .headertop .nav {
+  float: right;
+  color: #9EC2FD;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+#header .wrapper .headertop .nav span {
+  margin-right: 20px;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+#header .wrapper .headertop .nav .console {
+  color: #fff;
+}
+#header .wrapper .swiper1 {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 #E5EFFF;
+}
+#header .wrapper .swiper1 .swiper-slide {
+  text-align: center;
+  font-size: 15px;
+  margin: 0 20px;
+  height: 70px;
+  line-height: 70px;
+  cursor: pointer;
+}
+#header .wrapper .swiper1 .swiper-slide:hover {
+  color: #4D88E6;
+}
+#header .wrapper .swiper1 .swiper-slide:first-child {
+  margin-left: 5%;
+}
+#header .wrapper .swiper1 .selected {
+  color: #4D88E6;
+  border-bottom: 2px solid #4D88E6;
+}
+#header .wrapper .swiper2 {
+  margin-top: 2px;
+  width: 210px;
+  float: left;
+  height: 100%;
+}
+#header .wrapper .swiper2 .swiper-slide {
+  background-color: #fff;
+  font-size: 16px;
+  height: 676px;
+  color: #475054;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}

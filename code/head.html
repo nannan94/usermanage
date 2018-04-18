@@ -1,0 +1,231 @@
+<style>
+    /*样式*/
+    .hed-part1{
+        width: 100%;
+        height: 60px;
+        background: #4D88E6;
+        color: white;
+        min-width:1000px ;
+    }
+    .hed-part1 img{
+        float: left;
+        margin-left: 2.3%;
+        margin-top: 11px;
+    }
+    .hed-part1 .txt1{
+        float: left;
+        font-size: 18px;
+        line-height: 60px;
+        margin-left: 2.4%;
+    }
+    .hed-part1 .txt2{
+        color: #9EC2FD;
+        float: right;
+        font-size: 16px;
+        line-height: 60px;
+        margin-right: 1.2%;
+    }
+    .hed-part1 .txt2 span{
+        margin-right: 5px;
+    }
+    .hed-part1 .txt3{
+        font-size: 16px;
+        color: white;
+        float: right;
+        line-height: 60px;
+        margin-right: 1.8%;
+    }
+    .hed-part1 .txt3:hover{
+        cursor: pointer;
+    }
+    .hed-part2{
+        width: 100%;
+        min-width: 1000px;
+        height: 70px;
+        text-align: center;
+        font-size: 16px;
+        color: #333333;
+        background-color: #ffffff;
+    }
+    .hed-part2 ul{
+        line-height: 70px;
+        padding: 0 20px;
+        overflow: hidden;
+    }
+    .hed-part2 ul li{
+        display: inline-block;
+        width: 11%;
+        float: left;
+        position: relative;
+        cursor: pointer;
+    }
+    .hed-part2 ul li p{
+        box-sizing: border-box;
+        padding: 0 14px;
+        margin: 0 auto;
+        text-decoration: none;
+        color: #333;
+        height: 70px;
+        display: inline-block;
+    }
+    .hed-part2 .active p{
+        color: #4D88E6;
+        border-bottom: 3px solid #4D88E6;
+    }
+    .hed-part2 ul li:hover p{
+        color: #4D88E6;
+    }
+
+</style>
+<!--公共头部-->
+<div>
+    <!--第一部分-->
+    <div class="hed-part1">
+        <img src="images/logo.png" />
+        <p class="txt1">指标管理平台</p>
+        <p class="txt3">注销退出</p>
+        <p class="txt2">
+            登录ID：
+            <span>admin</span>
+            登录时间：
+            <span>2017-12-31</span>
+        </p>
+    </div>
+    <!--第二部分-->
+    <div class="hed-part2">
+        <ul>
+
+        </ul>
+    </div>
+    <!--侧边部分-->
+    <div id="siderconte">
+            <div class="side-wrapper">
+                <h1 class="mulu">目录</h1>
+                <div class="search">
+                    <input type="text" name="search" class="inputcont">
+                    <div id="search-button" class="search-button"></div>
+                </div>
+                <div class="menutree">
+                    <div class="easyui-panel">
+                        <ul id="tt" class="easyui-tree" data-options=""></ul>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+</div>
+<script>
+    var topdata="";
+    var assLiClickFlag = true, indexActive = -1;
+//    $('#siderconte').loaded('side.html');
+    $(document).on('click','.hed-part2 ul li',function(){
+        var ind=$(this).index();
+        if(assLiClickFlag === true || indexActive !== ind) {
+            assLiClickFlag = false;
+            indexActive = ind;
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+            centainlength(topdata[ind])
+            search(topdata[ind]);
+            //函数体结束后用延时器把assLiClickFlag改为true（限定在不能重复点击），或者不改回只请求一次
+            setTimeout(function(){
+                assLiClickFlag = true;
+            },2000);
+        }else{
+            console.log('两秒内重复点击同一个按钮')//测试
+        }
+    });
+    function addTreeTitle() {
+        var   dom= $('#tt .tree-title'),
+              len = dom.length
+         for(var i=0;i<len;i++){
+              var text=$(dom).eq(i).text();
+             $(dom).eq(i).parent().attr("title",text);
+         }
+
+//        $(tmpRightTitle).attr("title",titlecont)
+    }
+    //有tree渲染tree 没有tree就隐藏。
+    function centainlength(ind){
+        if(ind.data.length == 0 || typeof ind.data =="undefined"){
+            $('#siderconte').css('display','none');
+            $('.userchaxun').css('margin-left','20px');
+            $('.userchaxun').css('margin-right','20px');
+        }else {
+            $('#siderconte').css('display','block');
+            $('.userchaxun').css('margin-left','220px');
+            $('.userchaxun').css('margin-right','0px');
+            createTree(ind.data);
+        }
+        $('#body').load(ind.src);
+
+
+    }
+//    创建tree
+    function createTree(data){
+        $('#tt').tree({
+            data: data,
+            type: "GET",
+            animate: true,
+            onlyLeafCheck: true,
+            onClick: function(node) {
+                var ind=$(this).index();
+                if(assLiClickFlag === true || indexActive !== ind) {
+                    assLiClickFlag = false;
+                    indexActive = ind;
+                    if (node) {
+                        $('#body').load(node.url, function () {
+                            sendMessage();
+                        });
+                    }
+                    setTimeout(function(){
+                        assLiClickFlag = true;
+                    },2000);
+                }else{
+                    console.log('两秒内重复点击同一个按钮')//测试
+                }
+            },
+            onLoadSuccess: function (e, node) {
+                addTreeTitle();//调用上面定义的方法
+            }
+        })
+    }
+
+    $.ajax({
+        type:"GET",
+        url:"top.json",
+        dataType: "json",
+        success: function(data){
+            topdata=data;
+            var tophtml='';
+            for(var i=0;i<topdata.length;i++){
+                if(i==0){
+                    tophtml+='<li class="active"><p>'+topdata[i].name+'</p></li>'
+                }else{
+                    tophtml+='<li><p>'+topdata[i].name+'</p></li>';
+                }
+            }
+            $('.hed-part2 ul').html(tophtml);
+            centainlength(topdata[0])
+        },
+        error:function(data){
+            console.log(data)
+        }
+    });
+    //获取搜索的值
+    $('#search-button').on('click',function(){
+        var rolename = $('.inputcont').val();
+        $.ajax({
+            "url":"",
+            "type":"Post",
+            "data": rolename,
+            success: function(data){
+                createTree(data);
+            },
+            error: function () {
+                console.log("亲，搜索不到");
+            }
+        })
+    })
+</script>

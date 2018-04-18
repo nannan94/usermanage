@@ -1,0 +1,74 @@
+<div class="bodywrapper">
+    <div class="userchaxun">
+        <h1>企业金融事业部 — 社会渠道支付服务</h1>
+        <div class="tablewrapper-cengji">
+            <table class="table-normal" id="table">
+                <thead>
+                <tr>
+                    <th >姓名</th>
+                    <th >部门</th>
+                    <th >职务</th>
+                    <th >部门小组</th>
+                    <th >用户组</th>
+                    <th >联系电话</th>
+                    <th >员工工号</th>
+                    <th ></th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<script>
+    function sendMessage(){
+        var pageid=1;
+        function getData(){
+            $.ajax({
+                data:{},
+                type:"post",
+                dataType:"json",
+                url:'./data(1).json',
+                success:function(data){
+                    creattable(data);
+                }
+            });
+        }
+        getData();
+        function creattable(data){
+            var data=data.cengji,
+                len=data.length,
+                str="";
+            for(var i=0;i<len;i++){
+                str+="<tr>"+
+                    "<td>"+data[i].name+"</td>"+
+                    "<td class='kongjian'>"+data[i].department+"</td>"+
+                    "<td>"+data[i].zhiwu+"</td>"+
+                    "<td>"+data[i].zu+"</td>"+
+                    "<td>"+data[i].user+"</td>"+
+                    "<td>"+data[i].tel+"</td>"+
+                    "<td>"+data[i].ygh+"</td>"+
+                    "<td class='bianse' data='"+data[i].name+"' id="+data[i].id+">基本情况</td>"+
+                    " </tr>";
+            }
+            $("#table tbody").append(str);
+            $("#table tbody .bianse").on("click",function(e){
+                var index=$(this).parent().index();
+                var userid=data[index].id;
+                var obj={
+                    userid:userid,
+                    pageid:pageid
+                }
+                $('#body').load('user/jibenqk.html',function(){
+                    UserData(obj);
+                });
+            })
+        }
+
+    }
+
+
+</script>

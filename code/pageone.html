@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/tree.css" />
+    <link rel="stylesheet" href="css/tabs.css" />
+    <link rel="stylesheet" href="css/Table.min.css" />
+    <link rel="stylesheet" href="css/Button.min.css">
+    <link rel="stylesheet" href="css/combo.css">
+    <link rel="stylesheet" href="css/combobox.css">
+    <link rel="stylesheet" href="css/input.min.css">
+</head>
+<body>
+ <div id="header"></div>
+ <div id="body"></div>
+ <script src="js/jquery.min.js"></script>
+ <script type="text/javascript" src="js/jquery.easyui.min.js" ></script>
+ <script src="js/newdialg.js"></script>
+ <script>
+     $(function(){
+         $('#header').load('head.html');
+     })
+     //        中央控制弹窗位置
+     function center(el) {
+         var top = ($(window).height() - $('#dialg').height()) / 2;
+         var left = ($(window).width() - $('#dialg').width()) / 2;
+         var scrollTop = $(document).scrollTop();
+         var scrollLeft = $(document).scrollLeft();
+         el.css({
+             'top': top + scrollTop,
+             'left': left + scrollLeft
+         })
+     }
+     //    判断有没有搜索框
+     function search(ind){
+         if(ind.search == false){
+             $('.search').css('display','none');
+             $('.menutree').css('margin-top','27%');
+         }else{
+             $('.search').css('display','block');
+             $('.search').css('margin-top','10px');
+             $('.menutree').css('margin-top','40%');
+         }
+     }
+ </script>
+</body>
+</html>

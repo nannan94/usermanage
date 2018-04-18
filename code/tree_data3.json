@@ -1,0 +1,37 @@
+[{
+	"id":1,
+	"text":"My Documents",
+	"children":[{
+		"id":11,
+		"text":"Photos",
+		"state":"closed",
+		"children":[{
+			"id":111,
+			"text":"Friend"
+		},{
+			"id":112,
+			"text":"Wife"
+		},{
+			"id":113,
+			"text":"Company"
+		}]
+	},{
+		"id":12,
+		"text":"Program Files",
+		"children":[{
+			"id":121,
+			"text":"Intel"
+		},{
+			"id":122,
+			"text":"Java"
+
+		},{
+			"id":123,
+			"text":"Microsoft Office"
+		},{
+			"id":124,
+			"text":"Games",
+			"checked":true
+		}]
+	}]
+}]

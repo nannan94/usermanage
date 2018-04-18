@@ -1,0 +1,192 @@
+/*公共样式*/
+html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, label, input, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, article, aside, audio, canvas, figure, footer, header, mark, menu, nav, section, time, video { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal }
+article, aside, dialog, figure, footer, header, hgroup, nav, section, blockquote { display: block; }
+ul, ol { list-style: none; }
+img { border: 0 none; vertical-align: top; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+strong, em, i { font-style: normal; font-weight: normal; }
+ins { text-decoration: underline; }
+del { text-decoration: line-through; }
+mark { background: none; }
+input::-ms-clear { display: none !important; }
+body { font: 12px/1.5 \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", "Droid Sans Fallback", SimSun, sans-serif; background: #fff; }
+a { text-decoration: none; color: #333; }
+a:hover { text-decoration: underline; }
+/*首页样式*/
+.hed-part1{
+    width: 100%;
+    height: 60px;
+    background: #4D88E6;
+    color: white;
+    min-width:1000px ;
+}
+.hed-part1 img{
+    float: left;
+    margin-left: 2.3%;
+    margin-top: 11px;
+}
+.hed-part1 .txt1{
+    float: left;
+    font-size: 18px;
+    line-height: 60px;
+    margin-left: 2.4%;
+}
+.hed-part1 .txt2{
+    color: #9EC2FD;
+    float: right;
+    font-size: 16px;
+    line-height: 60px;
+    margin-right: 1.2%;
+}
+.hed-part1 .txt2 span{
+    margin-right: 5px;
+}
+.hed-part1 .txt3{
+    font-size: 16px;
+    color: white;
+    float: right;
+    line-height: 60px;
+    margin-right: 1.8%;
+}
+.hed-part1 .txt3:hover{
+    cursor: pointer;
+}
+.hed-part2{
+    width: 100%;
+    min-width: 1000px;
+    height: 70px;
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+}
+.hed-part2 ul{
+    line-height: 70px;
+    padding: 0 20px;
+    overflow: hidden;
+}
+.hed-part2 ul li{
+    display: inline-block;
+    width: 11%;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+.hed-part2 ul li p{
+    box-sizing: border-box;
+    padding: 0 6px;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #333;
+    height: 70px;
+    display: inline-block;
+}
+.hed-part2 .active p{
+    color: #4D88E6;
+    border-bottom: 3px solid #4D88E6;
+}
+.hed-part2 ul li:hover p{
+    color: #4D88E6;
+}
+/*内容*/
+.homecontan{
+    padding: 10px 20px;
+    background: #F6F8F8;
+}
+.homebox{
+    min-width: 1000px;
+    background: white;
+    padding: 45px 105px 45px 105px;
+    overflow: hidden;
+}
+.newsbox{
+    width: 100%;
+    height: 260px;
+    position: relative;
+    -webkit-box-shadow: #D0E3FF 0px 0px 20px;
+    -moz-box-shadow: #D0E3FF 0px 0px 20px;
+    box-shadow: #D0E3FF 0px 0px 20px;
+    /*border: 1px solid #D0E3FF;*/
+}
+.newsbox .top{
+    display: block;
+    position: absolute;
+    top: 0;
+    width:100%;
+    height:200px;
+    background: -webkit-gradient(linear, 0 0, 0 0, from(#92C9FF), to(#71A6F9));
+    background: -webkit-linear-gradient(right,#92C9FF,#71A6F9);
+    background: -moz-linear-gradient(right,#92C9FF,#71A6F9);
+    background: -o-linear-gradient(right,#92C9FF,#71A6F9);
+    background: -ms-linear-gradient(right,#92C9FF,#71A6F9);
+    background: linear-gradient(right,#92C9FF,#71A6F9);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #71A6F9, endColorstr = #92C9FF);
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    line-height: 40px\9;
+    line-height: 40px;
+    overflow: hidden;
+}
+.newsbox .top .pic1{
+    float: left;
+    margin-left: 30px ;
+    margin-top: 7px;
+    margin-right: 5px;
+}
+.newslibox{
+    position: absolute;
+    top: 40px;
+    overflow: hidden;
+    height: 220px;
+    width: 100%;
+}
+.newsbox .newsli{
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333333;
+    position: absolute;
+}
+.newsbox .newsli li:first-child a{
+    color: #4D88E6;
+}
+.newsbox .newsli li:hover a{
+    color: #4D88E6;
+}
+.newsbox .newsli li a{
+    text-decoration: none;
+    color: #333;
+}
+.newsbox .newsli li{
+    margin-top: 19px;
+}
+.newsbox .newsli li span{
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 3px 10px;
+    background:#4D88E6 ;
+}
+.senewsbox{
+    margin-top: 45px;
+    position: relative;
+    z-index: 999;
+    width: 49%;
+    float: left;
+    -webkit-box-shadow: #D0E3FF 0px 0px 20px;
+    -moz-box-shadow: #D0E3FF 0px 0px 20px;
+    box-shadow: #D0E3FF 0px 0px 20px;
+}
+.senewsbox:last-child{
+    float: right;
+}
+.homebox .last{
+    float: right;
+}
+.newslibox-exp{
+    overflow-y: scroll;
+}

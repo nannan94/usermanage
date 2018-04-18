@@ -1,0 +1,286 @@
+<div class="bodywrapper">
+    <div class="userchaxun">
+        <h1>企业金融事业部 — 社会渠道支付服务</h1>
+        <h1 class="personmession">个人用户基本信息</h1>
+    <form id="searchData">
+        <div class="xhifuwrapper2">
+            <div class="modifyrows">      
+                <span class="modifytit">用户ID</span>
+                <p>
+					<span name="userid">doud1234</span>
+<!-- 					<input type="hidden" name="userid" value="1234"> -->
+                </p>
+            </div>
+            <div class="modifyrows">
+               
+                    <span class="modifytit">用户部门</span>
+               <p>
+			          <span name="department">企业金融业务部</span>
+<!--                      <input type="hidden" name="department"> -->
+                </p>
+            </div>
+            <div class="modifyrows">
+             
+                    <span class="modifytit">部门小组</span>
+
+                <p>
+				    <span  name="group">社会渠道支付服务</span>
+<!--                     <input type="hidden" name="group"> -->
+                </a>
+            </div>
+            <div class="modifyrows">
+               
+                    <span class="modifytit">真实姓名</span>
+              
+                <p>  
+				     <span  name="username">邓伦伦</span>
+<!--                      <input type="hidden" name="username"> -->
+                </p>
+            </div>
+            <div class="modifyrows">
+             
+                    <span class="modifytit">用户职务</span>
+            
+                <p>
+				    <span name="duties">事业部经理</span>
+                    <!-- <input type="hidden" name="duties"> -->
+                </p>
+            </div>
+            <div class="modifyrows">
+              
+                    <span class="modifytit">用户员工号</span>
+               
+                <p>
+				      <span  name="jobNamber">10129876</span>
+                 <!--    <input type="hidden" name="jobNamber"> -->
+                </p>
+            </div>
+
+            <div class="modifyrows">
+          
+                    <span class="modifytit">联系电话</span>
+               
+                <p>
+				     <span name="tel">10129876</span>
+<!--                      <input type="hidden" name="tel"> -->
+                </p>
+            </div>
+            <div class="modifyrows">
+               
+                    <span class="modifytit">用户邮箱</span>
+             
+                <p>
+				    <span name="useremail">doud25@chinaunicom.cn</span>
+<!--                     <input type="hidden" name="useremail"> -->
+                </p>
+            </div>
+            <div class="modifyrows">
+               
+                    <span class="modifytit">用户性别</span>
+               
+                <p>
+				     <span name="usersex">男</span>
+<!--                      <input type="hidden" name="usersex"> -->
+                </p>
+            </div>
+            <div class="modifyrows2">        
+                    <span name="dept" class="modifytit">用户组</span>             
+                   <input id="cc" name="dept" value="" style="width:64%;max-width:522px;">
+        </div>
+        <div class="button textleft modifyrows3">
+            <span class="woui-btn woui-btn-orange woui-btn-small marginleft128" id="concel">
+                取消
+            </span>
+            <span class="woui-btn woui-btn-blue woui-btn-small" id="confirm">
+                确定
+            </span>
+        </div>
+      </div>
+  </form>
+    </div>
+</div>
+<link rel="stylesheet" href="css/Modifyuserright.css" type="text/css"/>
+<script>
+        var datas=[{
+            "id":1,
+            "text":"text1"
+        },{
+            "id":2,
+            "text":"text2"
+        },{
+            "id":3,
+            "text":"text3",
+        },{
+            "id":4,
+            "text":"text4"
+        },{
+            "id":5,
+            "text":"text5"
+        },{
+            "id":6,
+            "text":"text6"
+        },{
+            "id":7,
+            "text":"text7"
+        },{
+            "id":8,
+            "text":"text8",
+        },{
+            "id":9,
+            "text":"text9"
+        },{
+            "id":10,
+            "text":"text10"
+        }];
+        function GetTree(){
+            $.ajax({
+                type:"post",
+                dataType:"json",
+                url:'./getRoleByUserId.json',
+                success:function(data){
+                    creat(data.data)
+                },
+                error:function(data){
+//                    console.log(data)
+                }
+            })
+        }
+        function creat(datas){
+            $('#cc').combobox({
+                data:datas,
+                valueField:'roleId',
+                textField:'name',
+                panelHeight: 'auto',//自适应
+                multiple: true,
+                formatter: function (row) {
+                    var opts = $(this).combobox('options');
+                    return '<input type="checkbox" class="combobox-checkbox" id="' + row[opts.valueField] + '"><span class="select"></span>' + row[opts.textField]
+                },
+                onShowPanel: function () {
+                    var opts = $(this).combobox('options');
+                    var target = this;
+                    var values = $(target).combobox('getValues');
+                    $.map(values, function (value) {
+                        var el = opts.finder.getEl(target, value);
+                        el.find('input.combobox-checkbox')._propAttr('checked', true);
+                    })
+                },
+                onLoadSuccess: function () {
+                    var opts = $(this).combobox('options');
+                    var target = this;
+                    var values = $(target).combobox('getValues');
+                    $.map(values, function (value) {
+                        var el = opts.finder.getEl(target, value);
+                        el.find('input.combobox-checkbox')._propAttr('checked', true);
+                        el.find('span.select').addClass("selected");
+                    })
+                },
+                onSelect: function (row) {
+                    var opts = $(this).combobox('options');
+                    var el = opts.finder.getEl(this, row[opts.valueField]);
+                    el.find('input.combobox-checkbox')._propAttr('checked', true);
+                    el.find('span.select').addClass("selected");
+                },
+                onUnselect: function (row) {
+                    var opts = $(this).combobox('options');
+                    var el = opts.finder.getEl(this, row[opts.valueField]);
+                    el.find('input.combobox-checkbox')._propAttr('checked', false);
+                    el.find('span.select').removeClass("selected");
+                }
+            });
+        }
+        var  confirm=document.querySelector("#confirm");
+        confirm.onclick=function(){
+            var yhz=$("#cc").val();
+            if(yhz){
+                var type = "dialgseccess2";
+                var text = "用户组添加成功!";
+            }else{
+                var type = "dialgerror";
+                var text = "用户组为空，请从新添加";
+            }
+            var userid=$(".modifyrows").find('span[name=userid]').html();
+            $.ajax({
+                data:{
+                    "userId":userid,
+                    "yhz":""
+                },
+                type:"post",
+                dataType:"json",
+                url:'./getDetail.json',
+                success:function(){
+                        var dialog = new dialgModel();
+                        dialog.init({
+                            windows: ".bodywrapper",
+                            type: type,
+                            title:text
+                        });
+                        center($('#dialg'));
+                    $(document).on("click", '#dialg .confirm',function () {
+                       $('#body').load('./user/cengji.html' ,function () {
+                            sendMessage()
+                        })
+
+                    });
+                },
+                error: function () {
+                    var dialog = new dialgModel();
+                    dialog.init({
+                        windows: ".bodywrapper",
+                        type: "dialgerror",
+                        title: "用户组添加失败!"
+
+                    });
+                    center($('#dialg'));
+                }
+            })
+        }
+        var  concel=document.querySelector("#concel");
+        concel.onclick=function(){
+            $('#body').load('./user/cengji.html',function(){
+                sendMessage()
+            })
+            // var data=getSearch("#searchData");
+            //    console.log(data);
+        }
+        function getSearch(el){
+            var data=$("#searchData").serialize();
+            data=data.split("&");
+        }
+        function getUsermessage(id){
+            $.ajax({
+                data:{
+                    "userId":id
+                },
+                type:"post",
+                dataType:"json",
+                url:'./getDetail.json',
+                success:function(data){
+                    for(var key in data){
+                        $('.xhifuwrapper2').find("span[name="+key+"]").html(data[key])
+                    }
+                    var array=[];
+                    array=data.yhz.split(',')
+                    var allarray = $('#cc').combobox('getData')
+                    var numarr=[];
+                    for(var i=0;i<array.length;i++){
+                        for(var j=0;j<allarray.length;j++){
+                            if(array[i]==allarray[j].name){
+                                numarr.push(allarray[j].roleId)
+                            }
+                        }
+                    }
+                    for(var i=0;i<numarr.length;i++){
+                        $('#cc').combobox('select',numarr[i]);
+                    }
+                }
+            });
+        }
+        function UserData(obj){
+            // creat(datas);
+            GetTree();
+            getUsermessage(obj.userid)
+        }
+
+
+</script>

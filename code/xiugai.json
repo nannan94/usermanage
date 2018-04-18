@@ -1,0 +1,38 @@
+{
+  "xiugai":[
+    {
+      "id": 11,
+      "name":"技术部",
+      "xiugai":"修改",
+      "delete":"删除",
+      "src":"user/changeuser.html"
+  },{
+      "id": 12,
+      "name":"aaaa",
+      "xiugai":"修改",
+      "delete":"删除",
+      "src":""
+    },{
+      "id": 13,
+      "name":"bbb",
+      "xiugai":"修改",
+      "delete":"删除",
+      "src":""
+    },
+    {
+      "id": 14,
+      "name":"cccc",
+      "xiugai":"修改",
+      "delete":"删除",
+      "src":""
+    },
+    {
+      "id": 15,
+      "name":"dddd",
+      "xiugai":"修改",
+      "delete":"删除",
+      "src":""
+    }
+
+  ]
+}
